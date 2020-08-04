@@ -5,13 +5,13 @@ import { Context } from "../store/appContext";
 
 import "../../styles/demo.scss";
 
-export const Demo = () => {
+export const People = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
 		<div className="container">
 			<ul className="list-group">
-				{store.demo.map((item, index) => {
+				{store.people.map((item, index) => {
 					return (
 						<li
 							key={index}

@@ -7,7 +7,9 @@ export const Single = props => {
 	const { store, actions } = useContext(Context);
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[props.match.params.theid].title}</h1>
+			<h1 className="display-4">
+				This will show the demo element: {store.people[props.match.params.theid].title}
+			</h1>
 
 			<hr className="my-4" />
 
