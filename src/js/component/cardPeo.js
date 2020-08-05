@@ -33,7 +33,7 @@ export const Cardpeo = valores => {
 					<span
 						onClick={() => {
 							actions.addFavorites(valores.element.name);
-							console.log(valores);
+							console.log(valores.element.name);
 						}}
 						type="button"
 						className="btn btn-outline-warning fab fa-gratipay"

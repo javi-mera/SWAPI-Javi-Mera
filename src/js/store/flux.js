@@ -4,8 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			people: [],
 			planets: [],
-			details: {}
-			//favorites: []
+			details: {},
+			favorites: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -36,10 +36,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ details: valores });
 			},
 
-			addFavorites: valores => {
-				let newfavorites = state.favorites;
-				newfavorites.push(valores);
-				console.log(valores);
+			addFavorites: name => {
+				const prevFav = getStore().favorites;
+				const newfavorite = { name: name };
+				const updatefav = prevFav.concat(newfavorite);
+				setStore({ favorites: updatefav });
+				console.log("add", getStore().favorites);
+			},
+
+			removeFav: index => {
+				const eraseFav = getStore().favorites;
+				console.log("er", eraseFav);
+
+				eraseFav.splice(index, 1);
+				console.log("era", eraseFav);
+				setStore({ favorites: eraseFav });
+				console.log("c", getStore().favorites);
+				console.log(index);
 			},
 
 			changeColor: (index, color) => {

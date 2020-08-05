@@ -1,7 +1,11 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import Dropdown from "react-bootstrap/Dropdown";
+import Button from "react-bootstrap/Button";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
@@ -13,33 +17,33 @@ export const Navbar = () => {
 					alt=""
 				/>
 			</Link>
-			<div className="ml-auto dropdown">
-				<button
-					className="btn btn-primary dropdown-toggle"
-					href="#"
-					role="button"
-					id="dropdownMenuLink"
-					data-toggle="dropdown"
-					aria-haspopup="true"
-					aria-expanded="false">
+			<Dropdown>
+				<Dropdown.Toggle variant="primary" id="dropdown-basic">
 					Favorites
-				</button>
-				<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					<a className="dropdown-item" href="#">
-						Action
-					</a>
-					<a className="dropdown-item" href="#">
-						Another action
-					</a>
-					<a className="dropdown-item" href="#">
-						Something else here
-					</a>
-					<div className="dropdown-divider" />
-					<a className="dropdown-item" href="#">
-						Separated link
-					</a>
-				</div>
-			</div>
+				</Dropdown.Toggle>
+
+				<Dropdown.Menu>
+					<div>
+						{store.favorites.map((element, index) => {
+							return (
+								<div key={index} className="row">
+									<Dropdown.Item>
+										{element.name}
+										{index}
+									</Dropdown.Item>
+									<Button
+										type="button"
+										variant="outline-dark"
+										size="sm"
+										onClick={() => actions.removeFav({ index })}>
+										X
+									</Button>
+								</div>
+							);
+						})}
+					</div>
+				</Dropdown.Menu>
+			</Dropdown>
 		</nav>
 	);
 };
