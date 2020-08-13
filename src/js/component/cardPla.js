@@ -16,22 +16,28 @@ export const Cardpla = valores => {
 					<h5 className="card-title">{valores.element.name}</h5>
 					<p className="card-text">Population: {valores.element.gravity}</p>
 					<p className="card-text">Terrain: {valores.element.terrain}</p>
-
-					<Link to="/content">
+					<div className="d-flex justify-content-between ">
+						<Link to="/content">
+							<span
+								onClick={() => {
+									actions.details(valores.element);
+									console.log(valores);
+								}}
+								className="btn btn-primary btn-lg mt-auto"
+								href="#"
+								role="button">
+								More details!
+							</span>
+						</Link>
 						<span
 							onClick={() => {
-								actions.details(valores.element);
-								console.log(valores);
+								actions.addFavorites(valores.element.name);
+								console.log(valores.element.name);
 							}}
-							className="btn btn-primary btn-lg"
-							href="#"
-							role="button">
-							More details!
-						</span>
-					</Link>
-					<Link to="/demo">
-						<span type="button" className="btn btn-outline-warning fab fa-gratipay" />
-					</Link>
+							type="button"
+							className="btn btn-outline-warning fab fa-gratipay mt-auto"
+						/>
+					</div>
 				</div>
 			</div>
 		</div>

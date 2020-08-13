@@ -39,20 +39,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addFavorites: name => {
 				const prevFav = getStore().favorites;
 				const newfavorite = { name: name };
-				const updatefav = prevFav.concat(newfavorite);
-				setStore({ favorites: updatefav });
-				console.log("add", getStore().favorites);
+				if (prevFav.length == 0) {
+					setStore({ favorites: [...prevFav, newfavorite] });
+				} else {
+					console.log(
+						prevFav.some(element => {
+							element.name == name;
+						})
+					);
+
+					//setStore({ favorites: updatefav });
+				}
+
+				//localStorage.setItem(prevFav, JSON.stringify(updatefav));
 			},
 
-			removeFav: index => {
+			removeFav: element => {
 				const eraseFav = getStore().favorites;
-				console.log("er", eraseFav);
-
-				eraseFav.splice(index, 1);
-				console.log("era", eraseFav);
-				setStore({ favorites: eraseFav });
-				console.log("c", getStore().favorites);
-				console.log(index);
+				const exampleFil = eraseFav.filter(favSel => {
+					if (favSel != element) {
+						return favSel;
+					}
+				});
+				setStore({ favorites: exampleFil });
 			},
 
 			changeColor: (index, color) => {

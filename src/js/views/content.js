@@ -14,24 +14,43 @@ export const Content = () => {
 	console.log(store.details.name);
 	return (
 		<div className="container">
-			<div className="row border border-secondary rounded">
-				<div className="col-sm-9">
-					<img
-						className="col-8 col-sm-6 foto"
-						src="https://fotos01.diariodeibiza.es/2015/02/07/318x200/astronomia01.jpg"
-						alt="Card image cap"
-					/>
-					<div className="col-4 col-sm-6">
-						<h2>{store.details.name}</h2>
-						<p>
-							jkldjf;lkjedfj;laskjd jkjldfliejjldfliejlsj ;lkasjdjldfliejlsj ;lkasjdjldfliejlsj
-							;lkasjdjldfliejlsj ;lkasjdjldfliejlsj ;lkasjdlsj ;lkasjdi
-						</p>
+			<div className="row  justify-content-md-center">
+				<div className="col-sm-9 border border-secondary rounded caja">
+					<div className="row">
+						<img
+							className="col-5 col-sm-5 foto"
+							src="https://fotos01.diariodeibiza.es/2015/02/07/318x200/astronomia01.jpg"
+							alt="Card image cap"
+						/>
+						<div className="col-7 col-sm-7">
+							<h2 className="text-center">{store.details.name}</h2>
+							<br />
+							<p className="text-center">
+								jkldjf;lkjedfj;laskjd jkjldfliejjldfliejlsj ;lkasjdjldfliejlsj ;lkasjdjldfliejlsj
+								;lkasjdjldfliejlsj ;lkasjdjldfliejlsj ;lkasjdlsj ;lkasjdi
+							</p>
+						</div>
 					</div>
-					<Link to="/">
-						<span className="col-8 col-sm-6 btn btn-primary btn-lg" href="#" role="button">
-							Back home
-						</span>
+					<hr />
+
+					<br />
+					<div className="row">
+						<div className="d-flex flex-row justify-content-center">
+							<div className="p-4">
+								{Object.keys(store.details).map((key, index) => {
+									if (key == "name" || key == "mass" || key == "eye_color" || key == "diameter") {
+										return (
+											<p key={index}>
+												{key}: {store.details[key]}
+											</p>
+										);
+									}
+								})}
+							</div>
+						</div>
+					</div>
+					<Link to="/" className="ml-auto">
+						<button className="btn btn-secondary ml-auto">Back home</button>
 					</Link>
 				</div>
 			</div>

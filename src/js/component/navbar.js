@@ -7,13 +7,13 @@ import { Context } from "../store/appContext";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar fixed-top navbar-dark bg-secondary mb-3">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1" href="#" />
 				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Star_wars_1977_us.svg/1200px-Star_wars_1977_us.svg.png"
-					width="50"
-					height="30"
+					src="https://i0.wp.com/bosswaytools.co.za/wp-content/uploads/StarWars-Logo-bk_front.png?fit=1000%2C1000&ssl=1"
+					width="70"
+					height="50"
 					alt=""
 				/>
 			</Link>
@@ -22,20 +22,18 @@ export const Navbar = () => {
 					Favorites
 				</Dropdown.Toggle>
 
-				<Dropdown.Menu>
+				<Dropdown.Menu className="dropdown-box">
 					<div>
 						{store.favorites.map((element, index) => {
 							return (
 								<div key={index} className="row">
-									<Dropdown.Item>
-										{element.name}
-										{index}
-									</Dropdown.Item>
+									<Dropdown.Item>{element.name}</Dropdown.Item>
 									<Button
 										type="button"
-										variant="outline-dark"
-										size="sm"
-										onClick={() => actions.removeFav({ index })}>
+										className="btn btn-danger btn-sm ml-auto mr-4"
+										onClick={() => {
+											actions.removeFav(element);
+										}}>
 										X
 									</Button>
 								</div>

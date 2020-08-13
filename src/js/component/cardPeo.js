@@ -17,11 +17,11 @@ export const Cardpeo = valores => {
 					<p className="card-text">Gender: {valores.element.gender}</p>
 					<p className="card-text">Hair color: {valores.element.hair_color}</p>
 					<p className="card-text">Eye color: {valores.element.eye_color}</p>
+
 					<Link to="/content">
 						<span
 							onClick={() => {
 								actions.details(valores.element);
-								console.log(valores);
 							}}
 							className="btn btn-primary btn-lg"
 							href="#"
@@ -33,7 +33,6 @@ export const Cardpeo = valores => {
 					<span
 						onClick={() => {
 							actions.addFavorites(valores.element.name);
-							console.log(valores.element.name);
 						}}
 						type="button"
 						className="btn btn-outline-warning fab fa-gratipay"
