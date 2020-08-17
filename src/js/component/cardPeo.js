@@ -17,26 +17,29 @@ export const Cardpeo = valores => {
 					<p className="card-text">Gender: {valores.element.gender}</p>
 					<p className="card-text">Hair color: {valores.element.hair_color}</p>
 					<p className="card-text">Eye color: {valores.element.eye_color}</p>
+				</div>
+				<div className="card-footer">
+					<div className="d-flex justify-content-between ">
+						<Link to="/content">
+							<span
+								onClick={() => {
+									actions.details(valores.element);
+								}}
+								className="btn btn-primary btn-lg"
+								href="#"
+								role="button">
+								More details!
+							</span>
+						</Link>
 
-					<Link to="/content">
 						<span
 							onClick={() => {
-								actions.details(valores.element);
+								actions.addFavorites(valores.element.name);
 							}}
-							className="btn btn-primary btn-lg"
-							href="#"
-							role="button">
-							More details!
-						</span>
-					</Link>
-
-					<span
-						onClick={() => {
-							actions.addFavorites(valores.element.name);
-						}}
-						type="button"
-						className="btn btn-outline-warning fab fa-gratipay"
-					/>
+							type="button"
+							className="btn btn-outline-warning fab fa-gratipay mt-auto"
+						/>
+					</div>
 				</div>
 			</div>
 		</div>

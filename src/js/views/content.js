@@ -34,8 +34,8 @@ export const Content = () => {
 					<hr />
 
 					<br />
-					<div className="row">
-						<div className="d-flex flex-row justify-content-center">
+					<div className="row justify-content-center">
+						<div className="d-flex flex-row">
 							<div className="p-4">
 								{Object.keys(store.details).map((key, index) => {
 									if (key == "name" || key == "mass" || key == "eye_color" || key == "diameter") {
@@ -49,9 +49,11 @@ export const Content = () => {
 							</div>
 						</div>
 					</div>
-					<Link to="/" className="ml-auto">
-						<button className="btn btn-secondary ml-auto">Back home</button>
-					</Link>
+					<div className="row justify-content-center">
+						<Link to="/">
+							<button className="btn btn-secondary ml-auto">Back home</button>
+						</Link>
+					</div>
 				</div>
 			</div>
 		</div>

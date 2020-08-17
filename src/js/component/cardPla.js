@@ -16,6 +16,8 @@ export const Cardpla = valores => {
 					<h5 className="card-title">{valores.element.name}</h5>
 					<p className="card-text">Population: {valores.element.gravity}</p>
 					<p className="card-text">Terrain: {valores.element.terrain}</p>
+				</div>
+				<div className="card-footer">
 					<div className="d-flex justify-content-between ">
 						<Link to="/content">
 							<span

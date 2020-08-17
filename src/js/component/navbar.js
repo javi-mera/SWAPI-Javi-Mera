@@ -24,15 +24,15 @@ export const Navbar = () => {
 
 				<Dropdown.Menu className="dropdown-box">
 					<div>
-						{store.favorites.map((element, index) => {
+						{store.favorites.map((name, index) => {
 							return (
 								<div key={index} className="row">
-									<Dropdown.Item>{element.name}</Dropdown.Item>
+									<Dropdown.Item>{name}</Dropdown.Item>
 									<Button
 										type="button"
 										className="btn btn-danger btn-sm ml-auto mr-4"
 										onClick={() => {
-											actions.removeFav(element);
+											actions.removeFav(name);
 										}}>
 										X
 									</Button>
