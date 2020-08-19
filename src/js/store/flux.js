@@ -42,9 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				if (!prevFav.includes(name)) {
 					setStore({ favorites: [...prevFav, name] });
 				}
-				//setStore({ favorites: updatefav });
-
-				//localStorage.setItem(prevFav, JSON.stringify(updatefav));
+				localStorage.setItem("prevFav", JSON.stringify(prevFav));
 			},
 
 			removeFav: name => {
@@ -56,6 +54,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				});
 				setStore({ favorites: holder });
+				localStorage.removeItem("prevFav");
+				localStorage.setItem("prevFav", JSON.stringify(holder));
+			},
+
+			loadFav: () => {
+				setStore({ favorites: JSON.parse(localStorage.getItem("prevFav")) });
 			},
 
 			changeColor: (index, color) => {
