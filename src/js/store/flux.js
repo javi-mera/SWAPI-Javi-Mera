@@ -59,7 +59,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			loadFav: () => {
-				setStore({ favorites: JSON.parse(localStorage.getItem("prevFav")) });
+				if (JSON.parse(localStorage.getItem("prevFav")) != null) {
+					setStore({ favorites: JSON.parse(localStorage.getItem("prevFav")) });
+				} else {
+					setStore({ favorites: [] });
+				}
 			},
 
 			changeColor: (index, color) => {
