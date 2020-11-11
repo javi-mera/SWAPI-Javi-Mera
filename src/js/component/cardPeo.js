@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 export const Cardpeo = valores => {
 	const { store, actions } = useContext(Context);
 	return (
-		<div className="col-sm-3 m-2">
-			<div className="card">
+		<div className="col-sm-4 m-2">
+			<div className="">
 				<img
 					className="card-img-top"
 					src="https://i.blogs.es/69fdcc/star-wars-saga/1366_2000.jpg"

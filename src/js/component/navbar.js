@@ -42,6 +42,7 @@ export const Navbar = () => {
 							  })
 							: ""}
 					</div>
+					<Dropdown.Item>{store.favorites.length}</Dropdown.Item>
 				</Dropdown.Menu>
 			</Dropdown>
 		</nav>
