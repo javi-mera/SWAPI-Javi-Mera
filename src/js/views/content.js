@@ -13,7 +13,7 @@ export const Content = () => {
 	//console.log(theid);
 	console.log(store.details.name);
 	return (
-		<div className="container">
+		<div className="container ">
 			<div className="row  justify-content-md-center">
 				<div className="col-sm-9 border border-secondary rounded caja">
 					<div className="row">

@@ -6,7 +6,7 @@ export const Cardpla = valores => {
 	const { store, actions } = useContext(Context);
 	return (
 		<div className="col-sm-4 m-2">
-			<div className="">
+			<div className="card">
 				<img
 					className="card-img-top"
 					src="https://phantom-elmundo.unidadeditorial.es/df93f8e8824414f3eb155aa5f167fdd8/crop/18x29/690x375/resize/746/f/jpg/assets/multimedia/imagenes/2020/07/17/15949955446655.jpg"
