@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
+import "../styles/home.scss";
 
 import { Home } from "./views/home";
 //import { People } from "./views/demo";
@@ -18,7 +19,7 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div className="d-flex flex-column h-100">
+		<div className="ppal">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Switch>
