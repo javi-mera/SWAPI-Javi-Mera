@@ -20,11 +20,12 @@
     
 }
 
-.gridResult {
-    margin: 2rem ;
+.marginCards {
+    margin: 1rem ;
     //margin-left: 3.7rem;
-    height: 27rem;
+    //height: 27rem;
     //padding: 2rem
+    //width: 20%;
 }
 
 .gridAllCards {
@@ -55,3 +56,28 @@
     color: #2c2c2c;
     font-size: 1.1rem;
 }
+#fondo {
+	background-image: url(https://empresiona.com/wp-content/uploads/2019/02/guillermo-sanchez-529739-unsplash-2.jpg);
+	padding: 250px 60px;
+	text-align: center;
+	//background-position: center center;
+	background-size: cover;
+	//background-repeat: no-repeat;
+	position: relative;
+}
+
+.panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
+    background-size: cover;
+      padding: 260px 60px; }
+.panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); 
+background-size: cover;
+      padding: 260px 60px;}
+.panels {
+      min-height: 100vh;
+      //overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+
+    }

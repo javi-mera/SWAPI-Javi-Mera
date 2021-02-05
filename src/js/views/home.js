@@ -2,53 +2,62 @@ import "../../styles/home.scss";
 import { Cardpla } from "../component/cardPla";
 import { Cardpeo } from "../component/cardPeo";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
-	const [indexTop, setIndexTop] = useState(4);
-	const indexBottom = indexTop - 4;
-	const botn = document.querySelector(".botn");
-	const gridAllCards = document.querySelector(".gridAllCards");
+	const { store } = useContext(Context);
+	//const [indexTop, setIndexTop] = useState(4);
+	//const indexBottom = indexTop - 4;
+	//const botn = document.querySelector(".botn");
+	//const gridAllCards = document.querySelector(".gridAllCards");
 	//let shown = true;
-	const [shown, setShown] = useState(true);
+	/**const [shownPla, setShownPla] = useState(true);
+	const [shownPeo, setShownPeo] = useState(true);
 
-	if (shown) {
-		//botn.innerText = "Show Planets 👀";
-		gridAllCards.style.opacity = 0;
-	} else {
-		//botn.innerText = "Hide Planets 🙈";
-		gridAllCards.style.opacity = 1;
+	function handleClickPla() {
+		setShownPla(shownPla => !shownPla);
+		if (shownPla) {
+			setShownPeo(true);
+		}
 	}
 
-	shown = !shown;
-
+	function handleClickPeo() {
+		setShownPeo(shownPeo => !shownPeo);
+		if (shownPeo) {
+			setShownPla(true);
+		}
+	} */
+	/**<div className="row  gridAllCards">
+					{store.planets.map((element, i) => {
+						if (!shownPla) {
+							return <Cardpla key={i} element={element} />;
+						} else {
+							return null;
+						}
+					})}
+                </div> */
+	/**<div className="row  gridAllCards">
+					{store.people.map((element, i) => {
+						if (!shownPeo) {
+							return <Cardpeo key={i} element={element} />;
+						} else {
+							return null;
+						}
+					})}
+				</div> */
 	return (
 		<div className="">
 			<div className="">
-				<button className="botn " onClick={() => setShown(false)}>
-					{" "}
-					Hide planets
-				</button>
-				<div className="row  gridAllCards">
-					{store.planets.map((element, i) => {
-						return <Cardpla key={i} element={element} />;
-					})}
-				</div>
-				<p> Hola </p>
+				<Link to="/planets">
+					<button className="botn ">Planets</button>
+				</Link>
 			</div>
-			<div className="card-group">
-				<h2 className="row justify-content-md-center">People</h2>
-				<div className="list-group list-group-horizontal">
-					{store.people.map((element, i) => {
-						if (i + 1 <= indexTop && i + 1 > indexBottom) return <Cardpeo key={i} element={element} />;
-					})}
-				</div>
-				<button onClick={() => setIndexTop(indexTop - 3)}>Previous</button>
-				<button style={{ float: "right" }} onClick={() => setIndexTop(indexTop + 3)}>
-					Next
-				</button>
+			<div className="">
+				<Link to="/people">
+					<button className="botn ">People</button>
+				</Link>
 			</div>
 		</div>
 	);

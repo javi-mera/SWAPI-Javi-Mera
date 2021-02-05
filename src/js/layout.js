@@ -8,9 +8,10 @@ import { Home } from "./views/home";
 //import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 import { Content } from "./views/content";
-
+import { Planets } from "./views/planets";
+import { People } from "./views/people";
 import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+//import { Footer } from "./component/footer";
 
 //create your first component
 const Layout = () => {
@@ -31,11 +32,16 @@ const Layout = () => {
 						<Route exact path="/content">
 							<Content />
 						</Route>
+						<Route exact path="/planets">
+							<Planets />
+						</Route>
+						<Route exact path="/people">
+							<People />
+						</Route>
 						<Route>
 							<h1>Not hello!</h1>
 						</Route>
 					</Switch>
-					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
