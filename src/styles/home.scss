@@ -39,27 +39,48 @@
     //position: relative;
     text-decoration: none;
     font-family: sans-serif;
-    font-size: 0.9rem;
-    padding: 0.75em;
-    margin: 3rem auto;
+    font-size: 1rem;
+    //padding: 8.75em 3.2rem;
+    width: 12rem;
+    height: 19rem;
+    //width: 40%;
+    margin: 15rem auto;
     text-transform: uppercase;
     background: none;
-    color: #2c2c2c;
-    border: 1px solid #4a4a4a;
+    color: #e9dbdb;
+    border: 0;
     transition: all 200ms;
     justify-content: center;
     align-items: center;
+    border-radius: 1rem;
+    //text-decoration-line: violet;
+    background-color: rgba(69, 69, 180, 0.5);  opacity: 0.9;
+    box-shadow: 10px 5px 5px black;
 }
 
 .botn:hover {
-    border: 1px solid #ababab;
-    color: #2c2c2c;
-    font-size: 1.1rem;
+    //border: 1px solid #ababab;
+    //color: #e9dbdb;
+    color: #e7e40b;
+    font-size: 1.5rem;
+    width: 13rem;
+    height: 20rem;
+    //text-decoration: none;
+    
 }
-#fondo {
-	background-image: url(https://empresiona.com/wp-content/uploads/2019/02/guillermo-sanchez-529739-unsplash-2.jpg);
-	padding: 250px 60px;
-	text-align: center;
+
+
+.fondo {
+	background-image: url(https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    //padding: 250px 60px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    //padding-top: 16rem;
+    text-align: center;
+    top: 0px;
+    left: 0px;
+    justify-content: space-evenly;
 	//background-position: center center;
 	background-size: cover;
 	//background-repeat: no-repeat;

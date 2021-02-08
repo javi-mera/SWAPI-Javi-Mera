@@ -48,13 +48,13 @@ export const Home = () => {
 					})}
 				</div> */
 	return (
-		<div className="">
-			<div className="">
+		<div className="fondo">
+			<div>
 				<Link to="/planets">
-					<button className="botn ">Planets</button>
+					<button className="botn">Planets</button>
 				</Link>
 			</div>
-			<div className="">
+			<div>
 				<Link to="/people">
 					<button className="botn ">People</button>
 				</Link>
