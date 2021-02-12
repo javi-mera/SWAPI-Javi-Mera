@@ -51,12 +51,26 @@ export const Home = () => {
 		<div className="fondo">
 			<div>
 				<Link to="/planets">
-					<button className="botn">Planets</button>
+					<div className="botn ">
+						<div className="botn__face botn__face--front">
+							<img
+								className="pic"
+								src="https://www.geoenciclopedia.com/wp-content/uploads/2019/12/que_son_los_planetas.jpg"
+							/>
+						</div>
+						<div className="botn__face botn__face--back">
+							<img
+								className="pic"
+								src="https://arc-photo-larazon.s3.amazonaws.com/eu-central-1-prod/public/YBAQ7FCAINDAFJUIIOIOCHGBS4.jpg"
+							/>
+							<div className="texto">Planetas</div>
+						</div>
+					</div>
 				</Link>
 			</div>
 			<div>
 				<Link to="/people">
-					<button className="botn ">People</button>
+					<h3 className="botn">People</h3>
 				</Link>
 			</div>
 		</div>

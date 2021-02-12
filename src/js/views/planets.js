@@ -9,7 +9,7 @@ export const Planets = () => {
 	const { store } = useContext(Context);
 
 	return (
-		<div className="row  gridAllCards">
+		<div className="gridAllCards">
 			{store.planets.map((element, i) => {
 				return <Cardpla key={i} element={element} />;
 			})}
